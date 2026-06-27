@@ -106,7 +106,7 @@ export default function Blog() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-8 space-y-12">
+    <div className="max-w-6xl mx-auto py-6 md:py-8 space-y-12">
       <header className="space-y-4">
         <h1 className="text-4xl md:text-5xl font-serif italic font-bold tracking-tight uppercase">Le Journal</h1>
         <p className="text-xs font-bold uppercase tracking-widest opacity-60">Partagez vos inspirations, commentez et échangez autour de l'art.</p>

@@ -23,8 +23,8 @@ export default function Layout() {
   ];
 
   return (
-    <div className="min-h-screen p-4 md:p-10 font-sans flex flex-col">
-      <div className="flex-1 max-w-7xl mx-auto w-full border-[6px] md:border-8 border-[#2D2D2D] p-6 md:p-10 flex flex-col overflow-hidden relative shadow-[8px_8px_0px_rgba(0,0,0,0.1)] bg-[#F7F4F0]">
+    <div className="min-h-screen p-2 md:p-6 lg:p-8 font-sans flex flex-col bg-white">
+      <div className="flex-1 max-w-[1600px] mx-auto w-full border-[3px] md:border-[6px] border-[#2D2D2D] p-4 md:p-8 lg:p-12 flex flex-col overflow-hidden relative shadow-[4px_4px_0px_rgba(0,0,0,0.1)] md:shadow-[8px_8px_0px_rgba(0,0,0,0.1)] bg-[#F7F4F0]">
         
         {/* Navigation Bar */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-8 border-b border-[#2D2D2D] pb-6 gap-6">
@@ -118,10 +118,10 @@ export default function Layout() {
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="h-full"
             >
               <Outlet />

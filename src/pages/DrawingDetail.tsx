@@ -13,6 +13,7 @@ export default function DrawingDetail() {
   const [scale, setScale] = useState(1);
   const [rotation, setRotation] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -79,8 +80,21 @@ export default function DrawingDetail() {
             <motion.img
               src={drawing.imageUrl}
               alt={drawing.title}
-              animate={{ scale, rotate: rotation }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              animate={{ 
+                scale, 
+                rotate: rotation,
+                opacity: imageLoaded ? 1 : 0,
+                filter: imageLoaded ? "blur(0px)" : "blur(10px)"
+              }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 200, 
+                damping: 20,
+                opacity: { duration: 0.8 },
+                filter: { duration: 0.8 }
+              }}
+              onLoad={() => setImageLoaded(true)}
               drag
               dragConstraints={{ left: -300, right: 300, top: -300, bottom: 300 }}
               className="w-full h-auto object-contain max-h-[70vh] grayscale contrast-125 cursor-grab active:cursor-grabbing"
