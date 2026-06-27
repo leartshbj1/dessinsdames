@@ -1,0 +1,39 @@
+{
+  "collections": [
+    {
+      "name": "drawings",
+      "fields": [
+        { "name": "title", "type": "string" },
+        { "name": "description", "type": "string" },
+        { "name": "imageUrl", "type": "string" },
+        { "name": "startDate", "type": "string" },
+        { "name": "endDate", "type": "string" },
+        { "name": "createdAt", "type": "timestamp" },
+        { "name": "authorUid", "type": "string" }
+      ]
+    },
+    {
+      "name": "blogPosts",
+      "fields": [
+        { "name": "authorUid", "type": "string" },
+        { "name": "authorName", "type": "string" },
+        { "name": "authorPhotoUrl", "type": "string" },
+        { "name": "content", "type": "string" },
+        { "name": "imageUrl", "type": "string" },
+        { "name": "createdAt", "type": "timestamp" },
+        { "name": "likes", "type": "array" }
+      ]
+    },
+    {
+      "name": "blogComments",
+      "fields": [
+        { "name": "postId", "type": "string" },
+        { "name": "authorUid", "type": "string" },
+        { "name": "authorName", "type": "string" },
+        { "name": "authorPhotoUrl", "type": "string" },
+        { "name": "content", "type": "string" },
+        { "name": "createdAt", "type": "timestamp" }
+      ]
+    }
+  ]
+}
